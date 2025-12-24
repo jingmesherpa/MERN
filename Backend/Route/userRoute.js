@@ -1,7 +1,11 @@
 import { Router } from "express";
-import { signup, login } from "../Controller/userController.js";
+import { forgetPassword, loginUser, registerUser, resetPassword, verifyUser } from "../Controller/userController.js";
 
 export const userRouter = Router();
 
-userRouter.post("/signup", signup);
-userRouter.post("/login", login);
+
+userRouter.post("/register", registerUser);
+userRouter.get("/verify", verifyUser)
+userRouter.post("/login", loginUser)
+userRouter.get("/forget-password", forgetPassword)
+userRouter.patch("/reset-password", resetPassword)
