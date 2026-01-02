@@ -113,7 +113,7 @@ export const loginUser =async(req, res)=>{
           error: error.message,
         });
       }
-      };
+};
 export const forgetPassword = async(req, res)=>{
   try {
     let email=req.body.email;
@@ -154,7 +154,7 @@ export const forgetPassword = async(req, res)=>{
     
     
   }
-}
+};
 
 export const resetPassword = async (req, res) => {
   try {
@@ -189,6 +189,28 @@ export const resetPassword = async (req, res) => {
     });
 
   } catch (error) {
+    return res.status(500).json({
+      message: "Internal Server Error",
+      error: error.message,
+    });
+  }
+};
+
+export const updateUser = async (req,res) => {
+  try {
+    const data = req.body
+    delete data.password;
+
+    const id = req.userId;
+    console.log(id);
+
+    const result = await User.findByIdAndUpdate(id, data, {new:true});
+
+    res.status(200).json({
+      message: "User updated Successfully",
+      data: result
+    })
+} catch (error) {
     return res.status(500).json({
       message: "Internal Server Error",
       error: error.message,
