@@ -1,3 +1,19 @@
-200-Ok
-201-created
-40
+POST → 201
+
+GET → 200
+
+PUT/PATCH → 200
+
+DELETE → 204
+
+Bad input → 400
+
+Not logged in → 401
+
+No permission → 403
+
+Not found → 404
+
+Duplicate → 409
+
+Server crash → 500
