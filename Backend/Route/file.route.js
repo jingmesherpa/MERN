@@ -4,4 +4,5 @@ import { upload } from "../middleware/multer.js";
 
 export const fileRouter = Router();
 
-fileRouter.post("/upload", upload.single("upload"), uploadFileController);
+fileRouter.post("/upload", upload.single("image"), uploadFileController);
+
