@@ -1,22 +1,24 @@
-import React from 'react'
-import Home from './components/Home'
-import About from './components/About'
-import Courses from './components/Courses'
-import Footer from './components/Footer'
-import nav from './components/nav'
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/navbar";
 
-const App = () => {
+import Home from "./components/Home";
+import About from "./components/About";
+import Courses from "./components/Courses";
+import Footer from "./components/Footer";
+import Usestatepassword from "./components/Usestatepassword";
+
+function App() {
   return (
-    <div>
-      hwllo from app.jsx
-      
-      <Home></Home>
-      <About></About>
-      <Courses></Courses>
-      <Footer></Footer>
-      <nav></nav>
-    </div>
-  )
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/courses" element={<Courses />} />
+        <Route path="/footer" element={<Footer/>} />
+      </Routes>
+    </>
+  );
 }
 
-export default App
+export default App;

@@ -1,0 +1,19 @@
+
+
+
+/* Nav items wrapper */
+.items {
+  display: flex;
+  gap: 30px;            /* proper space between links */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Nav links */
+.items a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 16px;
+}
+
