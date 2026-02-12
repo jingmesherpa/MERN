@@ -8,9 +8,9 @@ import ResetPassword from "./components/Auth/ResetPassword";
 import Dashboard from "./components/Dashboard/Dashboard";
 import UpdateProfile from "./components/Dashboard/UpdateProfile";
 import ProductCreate from "./components/Dashboard/ProductCreate";
-import Navbar from "./components/Navbar";
 import MyProducts from "./components/Dashboard/MyProducts";
 import Home from "./components/Home";
+import Navbar from "./components/Navbar";
 
 
 function App() {
