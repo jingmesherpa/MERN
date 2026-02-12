@@ -24,8 +24,6 @@ const Navbar = () => {
       <h1>logo</h1>
       <nav className="items">
         <NavLink to={"/"}>Home</NavLink>
-        <NavLink to={"/about"}>About us</NavLink>
-        <NavLink to={"/shop"}>Shop</NavLink>
         <NavLink to={"/product"}>Products</NavLink>
         <NavLink to={"/store"}>Store</NavLink>
 

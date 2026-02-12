@@ -10,6 +10,7 @@ import UpdateProfile from "./components/Dashboard/UpdateProfile";
 import ProductCreate from "./components/Dashboard/ProductCreate";
 import Navbar from "./components/Navbar";
 import MyProducts from "./components/Dashboard/MyProducts";
+import Home from "./components/Home";
 
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
 
       <Routes>
         {/* Public Routes */}
+        <Route path="/" element={<Home />} />
+
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/product" element={<Products />} />
