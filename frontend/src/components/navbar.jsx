@@ -1,17 +1,55 @@
-import { NavLink } from "react-router-dom";
-import "../App.css"
-const Navbar = () => {
-  return (
-    <div className="header">
-      <h1>Logo</h1>
+import React, { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import "../App.css";
 
-      <div className="items">
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/about">About Us</NavLink>
-        <NavLink to="/courses">Courses</NavLink>
-        <NavLink to="/footer">Footer</NavLink>
-      
-      </div>
+const Navbar = () => {
+  const [logout, setLogout] = useState(false);
+
+  const navigate= useNavigate();
+
+  const token = localStorage.getItem("token");
+  console.log(token)
+
+  const handleLogOut = () =>{
+    localStorage.removeItem("token");
+    setLogout(true);
+    alert("You have been log out");
+
+    navigate("/login");
+  };
+
+  console.log(token);
+  return (
+    <div className="items">
+      <h1>logo</h1>
+      <nav className="items">
+        <NavLink to={"/"}>Home</NavLink>
+        <NavLink to={"/about"}>About us</NavLink>
+        <NavLink to={"/shop"}>Shop</NavLink>
+        <NavLink to={"/product"}>Products</NavLink>
+        <NavLink to={"/store"}>Store</NavLink>
+
+        
+        
+        
+        {token ? (
+          <>
+          <NavLink to={"/dashboard"}>Dashboard</NavLink>
+          <button onClick={handleLogOut}>Logout</button>
+          </>):(
+            <>
+          <NavLink to={"/login"}>Login</NavLink>
+          <NavLink to={"/register"}>Register</NavLink>
+          </>
+          )};
+
+
+
+
+
+        
+        {/* <NavLink to={"/forget-password"}></NavLink> */}
+      </nav>
     </div>
   );
 };

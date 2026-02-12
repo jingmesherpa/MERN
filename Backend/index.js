@@ -7,7 +7,7 @@ import { connectDB } from "./config/connectMongo.js";
 import { productRouter } from "./Route/productRoute.js";
 import { router } from "./Route/orderRoute.js";
 import { fileRouter } from "./Route/file.route.js";
-
+import cors from "cors"
 const app = express();
 app.use(express.json());
 
@@ -15,6 +15,7 @@ app.use(express.json());
 
 // 🔹 Serve upload folder DIRECTLY (no /uploads)
 app.use(express.static( "./uploads"));
+app.use(cors("http://localhost:5173"))
 
 connectDB();
 
@@ -23,6 +24,7 @@ app.use("/user", userRouter);
 app.use("/product", productRouter);
 app.use("/order", router);
 app.use("/file", fileRouter);
+
 
 app.get("/", (req, res) => {
   res.send("Hello world");

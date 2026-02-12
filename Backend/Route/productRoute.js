@@ -13,7 +13,7 @@ productRouter.post('/create',
     isAuthenticated, 
     isAuthorized(["admin"]), 
     createProduct);
-productRouter.get('/get', getAllProducts);
+productRouter.get('/getAll', getAllProducts);
 productRouter.get('/get/:id', getSpecificProductController) // "/:" lai dynamic routing bhanincha
 productRouter.patch("/update/:id", updateProductController)
 productRouter.delete("/delete/:id", deleteProductController)

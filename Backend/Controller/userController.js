@@ -136,8 +136,8 @@ export const forgetPassword = async(req, res)=>{
     const result= await sendEmail({
       email: req.body.email,
       subject: "password reset link",
-      html: `<p>Please request for reset Password</p> </br> <a href=http://localhost:1000/user/reset-password?token=${token}>
-      http://localhost:1000/user/reset-password?token=${token}
+      html: `<p>Please request for reset Password</p> </br> <a href=http://localhost:5173/user/reset-password?token=${token}>
+      http://localhost:5173/user/reset-password?token=${token}
       </a>`
 
     });
